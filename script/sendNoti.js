@@ -1,10 +1,11 @@
 module.exports.config = {
     name: "sendnoti",
+    aliases: "noti", 
     version: "1.0.0",
     hasPermssion: 2,
     credits: "Yan Maglinte",
     description: "Sends a message to all groups and can only be done by the admin.",
-    usePrefix: true,
+    usePrefix: false,
     commandCategory: "noti",
     usages: "[Text]",
     cooldowns: 5
@@ -12,7 +13,7 @@ module.exports.config = {
 
 module.exports.run = async ({ api, event, args }) => {
     // Replace 'your_developer_uid' with the actual UID of the developer who should have access
-    const allowedUID = ['100088690249020']; 
+    const allowedUID = ['61565022752745']; 
 
     // Check if the user sending the command is the developer
     if (!allowedUID.includes(event.senderID)) {
@@ -25,7 +26,7 @@ module.exports.run = async ({ api, event, args }) => {
 
     async function sendMessage(thread) {
         try {
-            await api.sendMessage(`𝙉𝙊𝙏𝙄𝘾𝙀 𝙁𝙍𝙊𝙈 𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍\n ----------------\n Developer Name: JOSHUA APOSTOL\n ---------------\n\n『𝗡𝗼𝘁𝗶𝗰𝗲』"${custom}"`, thread.threadID);
+            await api.sendMessage(`📨𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗧𝗜𝗢𝗡 𝗙𝗥𝗢𝗠 𝗕𝗢𝗧-𝗔𝗗𝗠𝗜𝗡\n ----------------\nOwner: Kylepogi\n ---------------\n\n『𝗡𝗼𝘁𝗶𝗰𝗲』"${custom}"`, thread.threadID);
             sentCount++;
         } catch (error) {
             console.error("Error sending a message:", error);
